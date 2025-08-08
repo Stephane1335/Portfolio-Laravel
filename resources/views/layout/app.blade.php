@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best personal portfolio modern template.">
+    <meta name="keywords" content="personal, portfolio, resume, cv, job, bio, virtual card, corporate, site design, professional, template, classic, modern">
+    <title>@yield('title') - Jean Stephane Yapo</title>
+
+    <!-- Site Favicon -->
+    <link rel="icon" href="{{ asset('assets/img/favicon/favicon.png') }}" type="image/x-icon">
+
+    <!-- Css All Plugins Files -->
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/remixicon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/aos.css') }}">
+
+    <!-- tailwindcss -->
+    <script src="{{ asset('assets/js/vendor/tailwindcss3.4.5.js') }}"></script>
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+</head>
+
+<body>
+    <x-header />
+
+    @yield('content')
+
+    <x-footer />
+        <!-- Plugins -->
+        <script src="{{ asset('assets/js/vendor/jquery.min.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery.fancybox.min.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery.mixitup.min.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/owl.carousel.min.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/parallax.min.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/aos.js')}}"></script>
+        <script src="{{ asset('assets/js/vendor/smoothscroll.min.js')}}"></script>
+    
+        <!-- main-js -->
+        <script src="{{ asset('assets/js/main.js')}}"></script>
+</body>
+
+</html>
