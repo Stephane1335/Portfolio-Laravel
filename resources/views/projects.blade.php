@@ -67,7 +67,7 @@
                                         <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]"> {{$project->title}} </a></h5>
                                         <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">@foreach ($project->typeproject as $type_project) {{$type_project->name}}, @endforeach </span>
                                         <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">{{ substr($project->description,0,100) }}...
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a>
+                                            <a href="{{ route('project.detail',$project->id) }}" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a>
                                         </p>
                                     </div>
                                 </div>

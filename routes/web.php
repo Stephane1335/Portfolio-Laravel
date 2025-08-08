@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SingleProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/about',[AboutController::class, 'index']);
 Route::get('/projects',[ProjectController::class, 'index']);
 Route::get('/services',[ServiceController::class, 'index']);
 Route::get('/resume',[ResumeController::class, 'index']);
+Route::get('/project/{id}',[SingleProjectController::class, 'index'])->name('project.detail');

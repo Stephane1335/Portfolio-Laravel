@@ -302,15 +302,15 @@
                     <div class="controls bix-projects-tabs px-[12px] flex flex-col items-center" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
                         <ul id="filters" class="clearfix mb-[30px] p-[5px] flex justify-center flex-wrap bg-[#f7f5fb] items-center border-[1px] border-solid border-[#1b1c20] rounded-[25px]">
                             <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer active" data-filter="all">All</li>
-                            <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer" data-filter=".web">Web</li>
-                            <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer" data-filter=".applications">Applications</li>
-                            <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer" data-filter=".graphics">Graphics</li>
-                            <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer" data-filter=".templates">Templates</li>
+                            @foreach ($type_projects as $type_project)
+                                <li class="filter m-[5px] py-[5px] px-[15px] transition-all duration-[0.25s] ease-out border-[0] rounded-[15px] font-montserrat text-[14px] leading-[26px] tracking-[0.03rem] text-[#111a24] cursor-pointer" data-filter=".{{$type_project->name}}">{{$type_project->name}}</li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="item-grid" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
                         <div class="flex flex-wrap w-full mb-[-24px]">
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item web graphics applications">
+                            @foreach ($projects as $project)
+                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item @foreach ($project->typeproject as $type_project) {{$type_project->name}} @endforeach">
                                 <div class="bix-project-card">
                                     <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
                                         <a href="assets/img/project/11.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
@@ -319,102 +319,15 @@
                                         </a>
                                     </div>
                                     <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Minimart - eCommerce Template</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">Graphics | Web | App</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum.
+                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]"> {{$project->title}} </a></h5>
+                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">@foreach ($project->typeproject as $type_project) {{$type_project->name}}, @endforeach </span>
+                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">{{ substr($project->description,0,100) }}...
                                             <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item applications graphics templates">
-                                <div class="bix-project-card">
-                                    <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
-                                        <a href="assets/img/project/33.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
-                                            <div class="overlay-project-card transition-all duration-[0.3s] ease-in-out opacity-[0] w-[calc(100%-60px)] h-[calc(100%-30px)] absolute top-[0] right-[30px] rounded-[30px] flex items-center justify-center bg-[#00000080] z-[45] overflow-hidden max-[480px]:p-[0] max-[480px]:w-[calc(100%-40px)] max-[480px]:h-[calc(100%-20px)] max-[480px]:top-[0] max-[480px]:bottom-[0] max-[480px]:right-[20px] max-[480px]:left-[20px]"></div>
-                                            <img src="assets/img/project/3.jpg" alt="project-3" class="transition-all duration-[0.3s] ease-in-out w-full">
-                                        </a>
-                                    </div>
-                                    <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Luxurious - Admin Dashboard</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">App | Templates | Graphics</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum.
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item web applications graphics">
-                                <div class="bix-project-card">
-                                    <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
-                                        <a href="assets/img/project/22.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
-                                            <div class="overlay-project-card transition-all duration-[0.3s] ease-in-out opacity-[0] w-[calc(100%-60px)] h-[calc(100%-30px)] absolute top-[0] right-[30px] rounded-[30px] flex items-center justify-center bg-[#00000080] z-[45] overflow-hidden max-[480px]:p-[0] max-[480px]:w-[calc(100%-40px)] max-[480px]:h-[calc(100%-20px)] max-[480px]:top-[0] max-[480px]:bottom-[0] max-[480px]:right-[20px] max-[480px]:left-[20px]"></div>
-                                            <img src="assets/img/project/2.jpg" alt="project-2" class="transition-all duration-[0.3s] ease-in-out w-full">
-                                        </a>
-                                    </div>
-                                    <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Carrot - eCommerce + Admin</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">Graphics | App | Web</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum.
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item web templates graphics">
-                                <div class="bix-project-card">
-                                    <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
-                                        <a href="assets/img/project/44.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
-                                            <div class="overlay-project-card transition-all duration-[0.3s] ease-in-out opacity-[0] w-[calc(100%-60px)] h-[calc(100%-30px)] absolute top-[0] right-[30px] rounded-[30px] flex items-center justify-center bg-[#00000080] z-[45] overflow-hidden max-[480px]:p-[0] max-[480px]:w-[calc(100%-40px)] max-[480px]:h-[calc(100%-20px)] max-[480px]:top-[0] max-[480px]:bottom-[0] max-[480px]:right-[20px] max-[480px]:left-[20px]"></div>
-                                            <img src="assets/img/project/4.jpg" alt="project-4" class="transition-all duration-[0.3s] ease-in-out w-full">
-                                        </a>
-                                    </div>
-                                    <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Guidex - Help Desk</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">Web | Templates | Graphics</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum. 
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item applications templates">
-                                <div class="bix-project-card">
-                                    <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
-                                        <a href="assets/img/project/55.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
-                                            <div class="overlay-project-card transition-all duration-[0.3s] ease-in-out opacity-[0] w-[calc(100%-60px)] h-[calc(100%-30px)] absolute top-[0] right-[30px] rounded-[30px] flex items-center justify-center bg-[#00000080] z-[45] overflow-hidden max-[480px]:p-[0] max-[480px]:w-[calc(100%-40px)] max-[480px]:h-[calc(100%-20px)] max-[480px]:top-[0] max-[480px]:bottom-[0] max-[480px]:right-[20px] max-[480px]:left-[20px]"></div>
-                                            <img src="assets/img/project/5.jpg" alt="project-5" class="transition-all duration-[0.3s] ease-in-out w-full">
-                                        </a>
-                                    </div>
-                                    <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Borox - Personal Portfolio</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">App | Templates</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum. 
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-[1200px]:w-[33.33%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px] item web graphics templates">
-                                <div class="bix-project-card">
-                                    <div class="project-image relative px-[30px] pb-[30px] overflow-hidden rounded-[30px] z-[1] max-[480px]:px-[20px] max-[480px]:pb-[20px]">
-                                        <a href="assets/img/project/66.jpg" data-fancybox="gallery" class="flex rounded-[30px] overflow-hidden">
-                                            <div class="overlay-project-card transition-all duration-[0.3s] ease-in-out opacity-[0] w-[calc(100%-60px)] h-[calc(100%-30px)] absolute top-[0] right-[30px] rounded-[30px] flex items-center justify-center bg-[#00000080] z-[45] overflow-hidden max-[480px]:p-[0] max-[480px]:w-[calc(100%-40px)] max-[480px]:h-[calc(100%-20px)] max-[480px]:top-[0] max-[480px]:bottom-[0] max-[480px]:right-[20px] max-[480px]:left-[20px]"></div>
-                                            <img src="assets/img/project/6.jpg" alt="project-6" class="transition-all duration-[0.3s] ease-in-out w-full">
-                                        </a>
-                                    </div>
-                                    <div class="project-contact pt-[170px] pb-[30px] px-[30px] mt-[-175px] relative z-[0] border-[1px] border-solid border-[#1b1c20] rounded-[30px] max-[480px]:pb-[20px] max-[480px]:px-[20px]">
-                                        <h5 class="mb-[2px] text-[18px] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-medium"><a href="single-project.html" class="transition-all duration-[0.3s] ease-in-out font-montserrat leading-[26px] tracking-[0.03rem] text-[18px] max-[1399px]:text-[17px] font-semibold text-[#111a24] hover:text-[#f41a4a]">Masterly - Personal Portfolio</a></h5>
-                                        <span class="font-montserrat font-normal leading-[26px] tracking-[0.02rem] text-[14px] max-[1399px]:text-[14px] text-[#999]">Graphics | Templates | Web</span>
-                                        <p class="mt-[4px] font-montserrat text-[14px] font-normal tracking-[0.03rem] leading-[22px] text-[#495461]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugit
-                                            vitae quod fugiat culpa iste laborum. 
-                                            <a href="single-project.html" class="text-[#111a24] inline-flex font-medium font-montserrat text-[14px] leading-[26px] tracking-[0.03rem]">Read More</a></p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

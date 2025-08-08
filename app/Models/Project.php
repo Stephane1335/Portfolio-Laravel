@@ -17,7 +17,14 @@ class Project extends Model
         'link',
     ];
 
-    public function typeproject(){
+    public function typeproject()
+    {
         return $this->belongsToMany(TypeProject::class,'project_type_project');
     }
+
+    public function images()
+    {
+        return $this->hasMany(ProjectImage::class);
+    }
+
 }
