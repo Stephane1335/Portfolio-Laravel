@@ -23,7 +23,7 @@
                         <h4 class="mb-[8px] font-montserrat tracking-[0.03rem] leading-[1.2] text-[35px] font-bold text-[#f41a4a] max-[1399px]:text-[32px] max-[1199px]:text-[28px] max-[767px]:text-[24px]" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">Hi, I am</h4>
                         <h1 class="mb-[16px] text-[78px] text-[#111a24] font-bold relative tracking-[0.03rem] leading-[1.2] max-[1399px]:text-[70px] max-[1199px]:text-[52px] max-[767px]:text-[38px]" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">Stephane Yapo</h1>
                         <p class="font-montserrat text-[27px] font-semibold text-[#111a24] leading-[26px] tracking-[0.03rem] max-[1399px]:text-[24px] max-[1199px]:text-[20px] max-[767px]:text-[18px]" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="800">I am a
-                            <span class="mx-[5px] text-[#f41a4a]">Software Engineer</span>
+                            <span class="mx-[5px] text-[#f41a4a]">Data Software Engineer</span>
                         </p>
                         <div class="bix-buttons m-[-10px] pt-[50px] flex flex-wrap relative max-[991px]:pt-[20px] max-[575px]:justify-center" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="900">
                             <button type="button" class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-montserrat text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-[#f41a4a] hover:border-[#f41a4a] hover:text-[#fff]">Download CV</button>

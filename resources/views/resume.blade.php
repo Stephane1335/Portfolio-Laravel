@@ -38,7 +38,7 @@
                 <div class="min-[992px]:w-[33.33%] w-full px-[12px]">
                     <div class="bix-resume-sidebar border-[1px] border-solid border-[#eae8ef] rounded-[20px] bg-[#f7f5fb] max-[991px]:hidden">
                         <div class="inner-img pt-[24px] px-[24px] max-[575px]:pt-[15px] max-[575px]:px-[15px]">
-                            <img src="assets/img/resume/resume.jpg" alt="resume" class="w-full rounded-[20px]">
+                            <img src="assets/img/about/about-one.png" alt="resume" class="w-full rounded-[20px]">
                         </div>
                         <div class="inner-contact border-b-[1px] border-solid border-[#eae8ef] p-[24px]">
                             <div class="resume-title mb-[12px]">
@@ -46,10 +46,10 @@
                             </div>
                             <div class="resume-contact-info">
                                 <ul class="m-[0] p-[0]">
-                                    <li class="py-[5px]"><i class="ri-phone-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">+91 1234567890</a></li>
-                                    <li class="py-[5px]"><i class="ri-mail-open-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">jennybrown@gmail.com</a></li>
-                                    <li class="py-[5px]"><i class="ri-link text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">www.jennybrown.com</a></li>
-                                    <li class="py-[5px]"><i class="ri-map-pin-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">987-A, Dudhivadar, Rajkot, Gujarat, Bharat - 360410.</a></li>
+                                    {{-- <li class="py-[5px]"><i class="ri-phone-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">+91 1234567890</a></li> --}}
+                                    <li class="py-[5px]"><i class="ri-mail-open-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">jeanstephaneyapo@proton.me</a></li>
+                                    <li class="py-[5px]"><i class="ri-link text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">www.jeanstephaneyapo.com</a></li>
+                                    {{-- <li class="py-[5px]"><i class="ri-map-pin-line text-[15px] font-medium text-[#777] mr-[10px]"></i><a href="javascript:void(0)" class="text-[15px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.03rem]">987-A, Dudhivadar, Rajkot, Gujarat, Bharat - 360410.</a></li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -57,16 +57,13 @@
                             <div class="resume-title mb-[12px]">
                                 <h4 class="font-montserrat text-[17px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] tracking-[0.03rem]"><i class="ri-book-3-line mr-[10px]"></i>Education</h4>
                             </div>
-                            <div class="resume-education-info mb-[12px]">
-                                <span class="font-montserrat leading-[26px] tracking-[0.02rem] text-[14px] font-medium text-[#777] flex justify-start">2012 - 2013</span>
-                                <h4 class="mb-[6px] text-[16px] font-semibold leading-[24px] text-[#111a24] tracking-[0.03rem] font-montserrat">Bachelor in Computer Engineering.</h4>
-                                <p class="text-[14px] leading-[24px] font-montserrat text-[#495461] font-normal tracking-[0.03rem]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
-                            <div class="resume-education-info">
-                                <span class="font-montserrat leading-[26px] tracking-[0.02rem] text-[14px] font-medium text-[#777] flex justify-start">2021 - 2024</span>
-                                <h4 class="mb-[6px] text-[16px] font-semibold leading-[24px] text-[#111a24] tracking-[0.03rem] font-montserrat">Master in Comuter Engineering.</h4>
-                                <p class="text-[14px] leading-[24px] font-montserrat text-[#495461] font-normal tracking-[0.03rem]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
+                            @foreach ($educations as $education)
+                                <div class="resume-education-info mb-[12px]">
+                                    <span class="font-montserrat leading-[26px] tracking-[0.02rem] text-[14px] font-medium text-[#777] flex justify-start"> {{$education->start_year}} - {{$education->end_year}} </span>
+                                    <h4 class="mb-[6px] text-[16px] font-semibold leading-[24px] text-[#111a24] tracking-[0.03rem] font-montserrat">{{$education->degree_name}}</h4>
+                                    <p class="text-[14px] leading-[24px] font-montserrat text-[#495461] font-normal tracking-[0.03rem]">{{substr($education->description,0,100)}}</p>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="inner-contact p-[24px]">
                             <div class="resume-title mb-[12px]">
@@ -90,8 +87,8 @@
                                 <img src="assets/img/resume/resume.jpg" alt="resume" class="h-[70px] w-[70px] rounded-[20px]">
                             </div>
                             <div class="inner-heading">
-                                <h4 class="mb-[4px] font-montserrat text-[26px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] max-[1399px]:text-[24px] max-[1199px]:mb-[0] max-[1199px]:text-[20px]">Jenny Brown</h4>
-                                <span class="text-[14px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">App Devloper</span>
+                                <h4 class="mb-[4px] font-montserrat text-[26px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] max-[1399px]:text-[24px] max-[1199px]:mb-[0] max-[1199px]:text-[20px]">Jean Stephane Yapo</h4>
+                                <span class="text-[14px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">Data Software Engineer</span>
                             </div>
                         </div>
                         <div class="inner-resume-contact mb-[-24px]">
@@ -99,55 +96,34 @@
                                 <div class="inner-title mb-[16px]">
                                     <h5 class="text-[20px] font-bold mb-[0] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[18px]">About Me</h5>
                                 </div>
-                                <p class="text-[15px] mb-[16px] font-montserrat text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                    interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
-                                    Cicero are also reproduced in their exact original form, accompanied by English.</p>
-                                <p class="text-[15px] mb-[0] font-montserrat text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which
-                                    don't look even slightly believable. If you are going to use a passage of Lorem
-                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary.</p>
+                                <p class="text-[15px] mb-[0] font-montserrat text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">I am a passionate creative developer and engineer who blends artistic vision with technical mastery to craft powerful and inspiring digital solutions. From sleek, responsive websites to intelligent data-driven applications, I transform ideas into engaging experiences that are both beautiful and functional. My expertise spans software engineering, data analysis, and modern web development, allowing me to deliver projects with precision, creativity, and impact. I believe every project should tell a story, solve real problems, and inspire its audience — and I bring this philosophy into everything I build. Always learning, always innovating, I stay at the cutting edge of technology to create work that not only meets expectations but exceeds them.</p>
                             </div>
                             <div class="resume-experience mb-[24px] p-[24px] border-[1px] border-solid border-[#eae8ef] rounded-[20px] bg-[#f7f5fb] max-[575px]:p-[15px]">
                                 <div class="inner-title mb-[16px]">
                                     <h5 class="text-[20px] font-bold mb-[0] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[18px]">My Experience</h5>
                                 </div>
+                                @foreach ($experiences as $experience)
                                 <div class="inner-experience mb-[8px] p-[20px] bg-[#fff] border-[1px] border-solid border-[#eae8ef] rounded-tl-[20px] rounded-tr-[20px]">
-                                    <h5 class="mb-[8px] text-[16px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[15px]">Envato Market</h5>
+                                    <h5 class="mb-[8px] text-[16px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[15px]"> {{$experience->company_name}} </h5>
                                     <div class="experience-value mb-[15px] flex justify-between flex-wrap">
-                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">- Team Leader</span>
-                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">June 12, 2023 - Present</span>
+                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">- {{$experience->job_name}}</span>
+                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">{{$experience->start_year}} - {{$experience->end_year}}</span>
                                     </div>
-                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit, impedit
-                                        temporibus error saepe voluptatem. Cum natus modi non tempora.</p>
+                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">{{$experience->description}}</p>
                                 </div>
-                                <div class="inner-experience p-[20px] bg-[#fff] border-[1px] border-solid border-[#eae8ef] rounded-bl-[20px] rounded-br-[20px]">
-                                    <h5 class="mb-[8px] text-[16px] font-bold text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[15px]">Meta Market</h5>
-                                    <div class="experience-value mb-[15px] flex justify-between flex-wrap">
-                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">- Team Member</span>
-                                        <span class="text-[13px] font-medium text-[#777] font-montserrat leading-[26px] tracking-[0.02rem]">June 12, 2022 - Present</span>
-                                    </div>
-                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit, impedit
-                                        temporibus error saepe voluptatem. Cum natus modi non tempora.</p>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="resume-project mb-[24px] p-[24px] border-[1px] border-solid border-[#eae8ef] rounded-[20px] bg-[#f7f5fb] max-[575px]:p-[15px]">
                                 <div class="inner-title mb-[16px]">
                                     <h5 class="text-[20px] font-bold mb-[0] text-[#111a24] tracking-[0.03rem] leading-[1.2] font-montserrat max-[991px]:text-[18px]">My Projects</h5>
                                 </div>
+                                @foreach ($projects as $project)
                                 <div class="inner-project mb-[8px] p-[20px] border-[1px] border-solid border-[#eae8ef] bg-[#fff] rounded-tl-[20px] rounded-tr-[20px]">
-                                    <h5 class="text-[16px] font-bold text-[#111a24] leading-[26px] tracking-[0.03rem] font-montserrat">Project title 1 - Admin Template</h5>
-                                    <a href="single-project.html" class="mb-[15px] text-[15px] font-normal text-[#777] flex font-montserrat leading-[26px] tracking-[0.03rem]">www.demourl.com</a>
-                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit, impedit
-                                        temporibus error saepe voluptatem. Cum natus modi non tempora.</p>
+                                    <h5 class="text-[16px] font-bold text-[#111a24] leading-[26px] tracking-[0.03rem] font-montserrat"> {{$project->title}} </h5>
+                                    <a href="{{$project->link}}" class="mb-[15px] text-[15px] font-normal text-[#777] flex font-montserrat leading-[26px] tracking-[0.03rem]">View Project</a>
+                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">{{$project->description}}</p>
                                 </div>
-                                <div class="inner-project p-[20px] border-[1px] border-solid border-[#eae8ef] bg-[#fff] rounded-bl-[20px] rounded-br-[20px]">
-                                    <h5 class="text-[16px] font-bold text-[#111a24] leading-[26px] tracking-[0.03rem] font-montserrat">Project title 2 - eCommerce Template</h5>
-                                    <a href="single-project.html" class="mb-[15px] text-[15px] font-normal text-[#777] flex font-montserrat leading-[26px] tracking-[0.03rem]">www.demourl.com</a>
-                                    <p class="text-[15px] font-montserrat mb-[0] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit, impedit
-                                        temporibus error saepe voluptatem. Cum natus modi non tempora.</p>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
