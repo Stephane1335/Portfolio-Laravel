@@ -52,7 +52,7 @@
                         <h5 class="mb-[24px] font-montserrat text-[37px] font-bold text-[#fff] tracking-[0.08rem] opacity-[0.5] leading-[1.2] max-[1399px]:text-[32px] max-[1199px]:text-[28px] max-[575px]:text-[28px] max-[420px]:text-[22px]">“Creativity is the bridge between imagination and innovation.”</h5>
                         <p class="mb-[16px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">As a creative developer and engineer, I merge artistic vision with technical expertise to craft innovative solutions. My journey is driven by a passion for transforming ideas into impactful digital experiences.</p>
                         <div class="about-name">
-                            <h6 class="mb-[0] font-montserrat text-[16px] text-[#111a24] font-bold tracking-[0.03rem] leading-[1.2]">Software Engineer</h6>
+                            <h6 class="mb-[0] font-montserrat text-[16px] text-[#111a24] font-bold tracking-[0.03rem] leading-[1.2]">Data Software Engineer</h6>
                             <p class="text-[14px] text-[#555] mb-[16px] font-montserrat font-normal leading-[26px] tracking-[0.03rem]">Jean Stephane Yapo</p>
                             <div class="inner-sign-items">
                                 <img src="assets/img/about/sign.png" alt="sign" class="white-mode w-[120px] inline">
@@ -196,7 +196,7 @@
                                                             <div class="achievement-year w-[100px] h-full absolute top-[0] flex items-center justify-center rotate-[270deg] z-[1] right-[-82px] max-[767px]:block max-[767px]:rotate-[0] max-[767px]:top-[-13px] max-[767px]:left-[45px]">
                                                                 <span class="bg-[#111a24] text-[#fff] border-[1px] border-solid border-[#111a24] rounded-[10px] leading-[1] py-[3px] px-[10px] font-montserrat font-normal tracking-[0.02rem] text-[14px]"> {{$educations[$i]->start_year}} -{{ substr($educations[$i]->end_year, -2) }}</span>
                                                             </div>
-                                                            <h4 class="mb-[8px] font-montserrat text-[18px] font-semibold leading-[26px] text-[#111a24] tracking-[0.03rem] max-[575px]:text-[16px] max-[575px]:leading-[25px]"> {{$i}} {{ $educations[$i]->degree_name }} <span class="text-[15px] text-[#555]">- {{ $educations[$i]->school_name }} </span></h4>
+                                                            <h4 class="mb-[8px] font-montserrat text-[18px] font-semibold leading-[26px] text-[#111a24] tracking-[0.03rem] max-[575px]:text-[16px] max-[575px]:leading-[25px]">{{ $educations[$i]->degree_name }} <span class="text-[15px] text-[#555]">- {{ $educations[$i]->school_name }} </span></h4>
                                                             <p class="overflow-hidden text-ellipsis flex m-[0] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]"> {{$educations[$i]->description}}</p>
                                                         </div>  
                                                     @endif
