@@ -26,7 +26,7 @@
                             <span class="mx-[5px] text-[#f41a4a]">Data Software Engineer</span>
                         </p>
                         <div class="bix-buttons m-[-10px] pt-[50px] flex flex-wrap relative max-[991px]:pt-[20px] max-[575px]:justify-center" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="900">
-                            <button type="button" class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-montserrat text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-[#f41a4a] hover:border-[#f41a4a] hover:text-[#fff]">Download CV</button>
+                            <a href="assets/Resume.pdf" download="Jean_Stephane_YAPO_Resume.pdf" class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-montserrat text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-[#f41a4a] hover:border-[#f41a4a] hover:text-[#fff]">Download CV</a>
                             <button type="button" class="modal-trigger bix-modal-toggle bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-montserrat text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-[#f41a4a] hover:border-[#f41a4a] hover:text-[#fff]">Hire Me <i class="ri-arrow-right-up-line"></i></button>
                         </div>
                     </div>
