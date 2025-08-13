@@ -198,7 +198,15 @@
                                                             </div>
                                                             <h4 class="mb-[8px] font-montserrat text-[18px] font-semibold leading-[26px] text-[#111a24] tracking-[0.03rem] max-[575px]:text-[16px] max-[575px]:leading-[25px]">{{ $educations[$i]->degree_name }} <span class="text-[15px] text-[#555]">- {{ $educations[$i]->school_name }} </span></h4>
                                                             <p class="overflow-hidden text-ellipsis flex m-[0] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]"> {{$educations[$i]->description}}</p>
-                                                        </div>  
+                                                            <div class="flex items-center space-x-4">
+                                                                <img class="h-auto max-w-xs" src="/assets/img/logo/verified.png" alt="image description">
+                                                                <p class="text-gray-700">This degree has been officially verified by WES.<br>
+                                                                    <a href="https://www.credly.com/badges/846cf822-0a70-4bdb-8009-e89537d6e7ff/public_url" target="_blank" class="text-blue-600 hover:underline">
+                                                                        Click here to verify.
+                                                                    </a>
+                                                                </p>
+                                                            </div>  
+                                                        </div>                                                           
                                                     @endif
                                                 @endfor
                                             </div>
@@ -212,6 +220,14 @@
                                                             <h4 class="mb-[8px] font-montserrat text-[18px] font-semibold leading-[26px] text-[#111a24] tracking-[0.03rem] max-[575px]:text-[16px] max-[575px]:leading-[25px]">{{ $educations[$i]->degree_name }} <span class="text-[15px] text-[#555]">- {{ $educations[$i]->school_name }}</span>
                                                             </h4>
                                                             <p class="overflow-hidden text-ellipsis flex m-[0] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">{{ $educations[$i]->description }}</p>
+                                                            <div class="flex items-center space-x-4">
+                                                                <img class="h-auto max-w-xs" src="/assets/img/logo/verified.png" alt="image description">
+                                                                <p class="text-gray-700">This degree has been officially verified by WES.<br>
+                                                                    <a href="https://www.credly.com/badges/846cf822-0a70-4bdb-8009-e89537d6e7ff/public_url" target="_blank" class="text-blue-600 hover:underline">
+                                                                        Click here to verify.
+                                                                    </a>
+                                                                </p>
+                                                            </div>  
                                                         </div>
                                                     @endif
                                                 @endfor
