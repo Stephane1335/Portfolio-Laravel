@@ -71,10 +71,9 @@
                             </div>
                             <div class="resume-contact-info">
                                 <ul class="m-[0] p-[0]">
-                                    <li class="py-[5px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">HTML</li>
-                                    <li class="py-[5px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Photoshop</li>
-                                    <li class="py-[5px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Angular</li>
-                                    <li class="py-[5px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">Php</li>
+                                    @foreach ($skills as $skill)
+                                        <li class="py-[5px] font-montserrat text-[14px] text-[#495461] font-normal leading-[26px] tracking-[0.03rem]">{{$skill->title}}</li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
